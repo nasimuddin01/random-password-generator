@@ -1,2 +1,1 @@
-django
-django-heroku
+django==3.0.4
