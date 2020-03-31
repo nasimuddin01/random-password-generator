@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/master.css' %}" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <title>Result</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Password Generator</h2>
+    <div class="result-container">
+      <span id="password">{{ password }}</span>
+      <button class="btn" id="clipboard">
+        <i class="far fa-clipboard"></i>
+      </button>
+    </div>
+    <a href="{% url 'home' %}" class="btn btn-large">Go Home</a>
+  </div>
+  <div class="popup hide">
+    <button type="button" class="quit"><i class="fas fa-times"></i></button>
+    <i class="fas fa-save fa-5x"></i>
+    <h2 class="pb-2">Password saved to clipboard !</h2>
+  </div>
+  <footer class="pt-2">Created with <span class="heart">❤️</span> by <a class="link" href="https://twitter.com/nasimuddin01">Nasim</a> </footer>
+  <script src="{% static 'script.js' %}" charset="utf-8"></script>
+</body>
+
+</html>
