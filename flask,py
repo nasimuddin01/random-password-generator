@@ -1,0 +1,19 @@
+@admin
+.route('/add-product', methods=['GET', 'POST'])
+@login_required
+
+def addProducts():
+    form = ProductForm()
+    if form.validate_on_submit():
+        # Create a directory in a known location to save files to.
+        uploads_dir = os.path.join(app.instance_path, 'uploads')
+        os.makedirs(uploads_dir, exists_ok=True)
+
+        http://form.image.data.save(os.path.join(uploads_dir, secure_filename(http://form.image.data.filename)))
+
+        if current_user.is_authenticated:
+            product=Product(product_name=form.product_name.data, category=http://form.category.data,
+                              description=http://form.description.data, price=http://form.price.data, image=filename)
+            db.session.add(product)
+            db.session.commit()
+    return render_template('admin/add-product.html', form=form)
